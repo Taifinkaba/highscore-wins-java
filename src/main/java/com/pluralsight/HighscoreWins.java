@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class HighscoreWins {
@@ -15,10 +16,15 @@ public class HighscoreWins {
         // seperate home, visitor and scores through :
         String[] teams = gameScore[0].split(":"), scores = gameScore[1].split(":");
 
-        // assign scores to numbers
+        // convert scores string to score numbers
         int homeScore = Integer.parseInt(scores[0].trim()), visitorScore = Integer.parseInt(scores[1].trim());
 
+        // compare scores
+        if (homeScore > visitorScore) System.out.println("Winner: " + teams[0].trim());
+        else if (visitorScore > homeScore) System.out.println("Winner: " + teams[1].trim());
+        else System.out.println("It's a tie!");
 
+        myScanner.close();
 
 
     }
